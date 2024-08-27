@@ -28,6 +28,17 @@ const ProductCardText = ({ productName, productSummary, productPrice }) => {
   );
 };
 
+// ProductCardButtons
+const ProductCardButtons = () => {
+  return (
+    <>
+      <BuyNowButton />
+      <AddToCartButton />
+      <AddToWishListButton />
+    </>
+  );
+};
+
 // AddToCartButton
 const AddToCartButton = () => {
   return <button className="button product-card-button">Add To Cart 🛒</button>;
@@ -55,4 +66,4 @@ const BuyNowButton = ({ linkText = "Buy Now", category, id, productName }) => {
 
 // Render app
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render();
+root.render(<ProductCardButtons />);
