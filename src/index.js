@@ -28,12 +28,11 @@ const ProductCardText = ({ productName, productSummary, productPrice }) => {
   );
 };
 
+// Button
+const Button = ({ buttonText }) => {
+  return <button className="button product-card-button">{buttonText}</button>;
+};
+
 // Render app
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <ProductCardText
-    productName="Laptop"
-    productSummary="This is a laptop."
-    productPrice={1999.99}
-  />
-);
+root.render(<Button buttonText="I'm a button :)" />);
