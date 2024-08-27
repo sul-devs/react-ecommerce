@@ -4,7 +4,13 @@ import ReactDOM from "react-dom/client";
 import laptop from "./assets/images/laptop.jpg";
 import "./app.css";
 
-// ProductCardImage
+// Parent: ProductCard
+const ProductCard = () => {
+  return (
+  )
+}
+
+// Child 1: ProductCardImage
 const ProductCardImage = ({ src, alt, width }) => {
   return (
     <img
@@ -17,7 +23,7 @@ const ProductCardImage = ({ src, alt, width }) => {
   );
 };
 
-// ProductCardText
+// Child 2: ProductCardText
 const ProductCardText = ({ productName, productSummary, productPrice }) => {
   return (
     <>
@@ -28,7 +34,7 @@ const ProductCardText = ({ productName, productSummary, productPrice }) => {
   );
 };
 
-// ProductCardButtons
+// Child 3: ProductCardButtons
 const ProductCardButtons = () => {
   return (
     <>
@@ -38,6 +44,8 @@ const ProductCardButtons = () => {
     </>
   );
 };
+
+// Grandchildren
 
 // AddToCartButton
 const AddToCartButton = () => {
