@@ -16,17 +16,15 @@ const ProductCard = (
   id
 ) => {
   return (
-    <>
-      <Image src={src} alt={alt} width={width} height={width * 0.8} />
+    <article className="product-card">
+      <Image src={src} alt={alt} width="250" height={width * 0.8} />
       <h3>{productName}</h3>
       <p>{productSummary}</p>
       <p>{`£${productPrice}`}</p>
-      <ProductCardButtons
-        category={category}
-        id={id}
-        productName={productName}
-      />
-    </>
+      <BuyNowButton category={category} id={id} />
+      <AddToCartButton />
+      <AddToWishListButton />
+    </article>
   );
 };
 
@@ -37,25 +35,12 @@ const Image = ({ src, alt, width, height }) => {
   );
 };
 
-// Child 3: ProductCardButtons
-const ProductCardButtons = () => {
-  return (
-    <>
-      <BuyNowButton />
-      <AddToCartButton />
-      <AddToWishListButton />
-    </>
-  );
-};
-
-// Grandchildren
-
 // AddToCartButton
 const AddToCartButton = () => {
   return <button className="button product-card-button">Add To Cart 🛒</button>;
 };
 
-// AddToWishList
+// AddToWishListButton
 const AddToWishListButton = () => {
   return (
     <button className="button product-card-button">Add To WishList 🎁</button>
@@ -77,4 +62,4 @@ const BuyNowButton = ({ category, id, productName }) => {
 
 // Render app
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<ProductCard />);
+root.render(<ProductCard src={laptop} />);
