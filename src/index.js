@@ -35,6 +35,9 @@ const Image = ({ src, alt, width, height }) => {
   );
 };
 
+// ProductRating
+const ProductRating = () => {};
+
 // AddToCartButton
 const AddToCartButton = () => {
   return <button className="button product-card-button">Add To Cart 🛒</button>;
