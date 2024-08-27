@@ -28,12 +28,12 @@ const ProductCardText = ({ productName, productSummary, productPrice }) => {
   );
 };
 
-// Button
-const Button = ({ buttonText }) => {
-  return <button className="button product-card-button">{buttonText}</button>;
+// AddToCartButton
+const AddToCartButton = () => {
+  return <button className="button product-card-button">Add To Cart 🛒</button>;
 };
 
-// productPageLink
+// ProductPageLink
 const ProductPageLink = ({
   linkText = "Buy Now",
   category,
@@ -53,4 +53,4 @@ const ProductPageLink = ({
 
 // Render app
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<ProductPageLink category="Devices" id="1" productName="Laptop" />);
+root.render(<AddToCartButton />);
