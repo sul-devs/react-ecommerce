@@ -40,13 +40,8 @@ const AddToWishListButton = () => {
   );
 };
 
-// ProductPageLink
-const ProductPageLink = ({
-  linkText = "Buy Now",
-  category,
-  id,
-  productName,
-}) => {
+// BuyNowButton
+const BuyNowButton = ({ linkText = "Buy Now", category, id, productName }) => {
   return (
     <a
       className="button product-card-button"
@@ -60,4 +55,4 @@ const ProductPageLink = ({
 
 // Render app
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AddToWishListButton />);
+root.render();
