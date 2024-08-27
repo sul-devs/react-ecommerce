@@ -4,21 +4,43 @@ import ReactDOM from "react-dom/client";
 import laptop from "./assets/images/laptop.jpg";
 import "./app.css";
 
-// Parent: ProductCard
-const ProductCard = () => {
+// ProductCard
+const ProductCard = (
+  src,
+  alt,
+  width = "250",
+  productName,
+  productSummary,
+  productPrice,
+  category,
+  id
+) => {
   return (
-  )
-}
+    <>
+      <Image src={src} alt={alt} width={width} height={width * 0.8} />
+      <ProductCardText
+        productName={productName}
+        productSummary={productSummary}
+        productPrice={productPrice}
+      />
+      <ProductCardButtons
+        category={category}
+        id={id}
+        productName={productName}
+      />
+    </>
+  );
+};
 
-// Child 1: ProductCardImage
-const ProductCardImage = ({ src, alt, width }) => {
+// Image
+const Image = ({ src, alt, width = "250" }) => {
   return (
     <img
-      className="product-card-image"
+      className="image"
       src={src}
       alt={alt}
-      width={250}
-      height={200}
+      width={width}
+      height={width * 0.8}
     />
   );
 };
@@ -60,18 +82,18 @@ const AddToWishListButton = () => {
 };
 
 // BuyNowButton
-const BuyNowButton = ({ linkText = "Buy Now", category, id, productName }) => {
+const BuyNowButton = ({ category, id, productName }) => {
   return (
     <a
       className="button product-card-button"
       href={`${category}/${id}`}
       title={`Go to ${productName} page.`}
     >
-      {linkText}
+      Buy Now
     </a>
   );
 };
 
 // Render app
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<ProductCardButtons />);
+root.render(<ProductCard />);
