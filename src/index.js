@@ -41,7 +41,11 @@ const ProductPageLink = ({
   productName,
 }) => {
   return (
-    <a href={category / id} title={`Go to ${productName} page.`}>
+    <a
+      className="button product-card-button"
+      href={`${category}/${id}`}
+      title={`Go to ${productName} page.`}
+    >
       {linkText}
     </a>
   );
