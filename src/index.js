@@ -18,11 +18,9 @@ const ProductCard = (
   return (
     <>
       <Image src={src} alt={alt} width={width} height={width * 0.8} />
-      <ProductCardText
-        productName={productName}
-        productSummary={productSummary}
-        productPrice={productPrice}
-      />
+      <h3>{productName}</h3>
+      <p>{productSummary}</p>
+      <p>{`£${productPrice}`}</p>
       <ProductCardButtons
         category={category}
         id={id}
@@ -33,26 +31,9 @@ const ProductCard = (
 };
 
 // Image
-const Image = ({ src, alt, width = "250" }) => {
+const Image = ({ src, alt, width, height }) => {
   return (
-    <img
-      className="image"
-      src={src}
-      alt={alt}
-      width={width}
-      height={width * 0.8}
-    />
-  );
-};
-
-// Child 2: ProductCardText
-const ProductCardText = ({ productName, productSummary, productPrice }) => {
-  return (
-    <>
-      <h3>{productName}</h3>
-      <p>{productSummary}</p>
-      <p>{`£${productPrice}`}</p>
-    </>
+    <img className="image" src={src} alt={alt} width={width} height={height} />
   );
 };
 
