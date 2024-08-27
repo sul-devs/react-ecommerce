@@ -33,6 +33,13 @@ const AddToCartButton = () => {
   return <button className="button product-card-button">Add To Cart 🛒</button>;
 };
 
+// AddToWishList
+const AddToWishListButton = () => {
+  return (
+    <button className="button product-card-button">Add To WishList 🎁</button>
+  );
+};
+
 // ProductPageLink
 const ProductPageLink = ({
   linkText = "Buy Now",
@@ -53,4 +60,4 @@ const ProductPageLink = ({
 
 // Render app
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AddToCartButton />);
+root.render(<AddToWishListButton />);
