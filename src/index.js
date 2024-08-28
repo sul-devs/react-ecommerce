@@ -17,7 +17,15 @@ const ProductCard = ({
 }) => {
   return (
     <article className="product-card">
-      <Image src={src} alt={alt} width={width} height={width * 0.8} />
+      <ImageLink
+        src={src}
+        alt={alt}
+        width={width}
+        height={width * 0.8}
+        category={category}
+        id={id}
+        productName={productName}
+      />
       <h3 className="product-name">{productName}</h3>
       <p className="product-summary">{productSummary}</p>
       <p className="product-price">{`£${productPrice}`}</p>
@@ -28,16 +36,19 @@ const ProductCard = ({
   );
 };
 
-// Image
-const Image = ({ src, alt, width, height }) => {
+// ImageLink
+const ImageLink = ({ src, alt, width, height, category, id, productName }) => {
   return (
-    <img className="image" src={src} alt={alt} width={width} height={height} />
+    <a href={`${category}/${id}`} title={`Go to ${productName} page.`}>
+      <Image
+        className="image"
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
+      />
+    </a>
   );
-};
-
-// ProductRating
-const ProductRating = () => {
-  return <p>XXXX (4)</p>;
 };
 
 // AddToCartButton
@@ -69,6 +80,18 @@ const BuyNowButton = ({ category, id, productName }) => {
       Buy Now ➡
     </a>
   );
+};
+
+// Image
+const Image = ({ src, alt, width, height }) => {
+  return (
+    <img className="image" src={src} alt={alt} width={width} height={height} />
+  );
+};
+
+// ProductRating
+const ProductRating = () => {
+  return <p>XXXX (4)</p>;
 };
 
 // Render app
