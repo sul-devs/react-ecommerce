@@ -1,3 +1,11 @@
+/* Variables */
+:root {
+  --primary-color: blue;
+  --secondary-color: yellow;
+  --accent-color: red;
+  --container-width: 800px;
+}
+
 /* Reset */
 * {
   margin: 0;
