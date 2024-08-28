@@ -1,9 +1,29 @@
+/* Fonts */
+@font-face {
+  font-family: "open_sansextrabold";
+  src: url("assets/fonts/opensans-extrabold-webfont.woff2") format("woff2"),
+    url("assets/fonts/opensans-extrabold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "poppinsmedium";
+  src: url("assets/fonts/poppins-medium-webfont.woff2") format("woff2"),
+    url("assets/fonts/poppins-medium-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* Variables */
 :root {
-  --primary-color: blue;
+  --primary-color: red;
   --secondary-color: yellow;
-  --accent-color: red;
+  --accent-color: blue;
+  --button-color: var(--accent-color);
   --container-width: 800px;
+  --heading-font: "open_sansextrabold";
+  --body-font: "poppinsmedium";
 }
 
 /* Reset */
@@ -18,13 +38,56 @@ a {
   text-decoration: none;
 }
 
+/* Typography */
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--heading-font);
+}
+
+h1 {
+  font-size: 2em;
+  line-height: 2.8;
+}
+
+h2 {
+  font-size: 1.7em;
+  line-height: 2.5;
+}
+
+h3 {
+  font-size: 1.5em;
+  line-height: 2.1;
+}
+
+h4 {
+  font-size: 1.1em;
+  line-height: 1.7;
+}
+
+body {
+  font-family: var(--body-font);
+}
+
+p {
+  line-height: 1.8;
+}
+
+a,
+button,
+input {
+  font-family: inherit;
+}
+
 /* Button */
 .button {
   display: inline-block;
   border: none;
-  background-color: blue;
+  background-color: var(--button-color);
   color: white;
-  padding: 1em;
+  padding: 0.8em;
+  font-size: 0.8em;
 }
 
 .button.product-card-button {
