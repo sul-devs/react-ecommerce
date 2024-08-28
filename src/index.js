@@ -60,7 +60,7 @@ const BuyNowButton = ({ category, id, productName }) => {
       href={`${category}/${id}`}
       title={`Go to ${productName} page.`}
     >
-      Buy Now
+      Buy Now ➡
     </a>
   );
 };

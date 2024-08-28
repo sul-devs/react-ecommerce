@@ -9,3 +9,19 @@
 a {
   text-decoration: none;
 }
+
+/* Button */
+.button {
+  display: inline-block;
+  border: none;
+  background-color: blue;
+  color: white;
+  padding: 1em;
+}
+
+.button.product-card-button {
+  display: block;
+  margin-block: 0.5em;
+  min-width: 100%;
+  text-align: left;
+}
