@@ -26,12 +26,12 @@ const ProductCard = ({
         id={id}
         productName={productName}
       />
+      <p className="product-price">{`£${productPrice}`}</p>
       <h3 className="product-name">{productName}</h3>
       <p className="product-summary">{productSummary}</p>
-      <p className="product-price">{`£${productPrice}`}</p>
-      <BuyNowButton category={category} id={id} />
-      <AddToCartButton />
-      <AddToWishListButton />
+      <BuyNowButton category={category} id={id} productName={productName} />
+      <AddToCartButton productName={productName} />
+      <AddToWishListButton productName={productName} />
     </article>
   );
 };
@@ -52,18 +52,24 @@ const ImageLink = ({ src, alt, width, height, category, id, productName }) => {
 };
 
 // AddToCartButton
-const AddToCartButton = () => {
+const AddToCartButton = ({ productName }) => {
   return (
-    <button className="button secondary-button product-card-button">
+    <button
+      className="button secondary-button product-card-button"
+      title={`Add ${productName} to your cart.`}
+    >
       Add To Cart 🛒
     </button>
   );
 };
 
 // AddToWishListButton
-const AddToWishListButton = () => {
+const AddToWishListButton = ({ productName }) => {
   return (
-    <button className="button secondary-button product-card-button">
+    <button
+      className="button secondary-button product-card-button"
+      title={`Add ${productName} to your wish list.`}
+    >
       Add To WishList 🎁
     </button>
   );
@@ -100,8 +106,10 @@ root.render(
   <ProductCard
     src={laptop}
     alt="Laptop"
-    productName="Laptop"
+    productName="Maqbook Pro Laptop"
     productSummary="Very nice laptop, with apple."
     productPrice={249.99}
+    category="Devices"
+    id={1}
   />
 );

@@ -58,7 +58,7 @@ h2 {
 
 h3 {
   font-size: 1.5em;
-  line-height: 2.1;
+  line-height: 1.5;
 }
 
 h4 {
@@ -85,7 +85,7 @@ input {
   display: inline-block;
   border: none;
   padding: 0.8em;
-  font-size: 0.8em;
+  font-size: 0.9em;
   cursor: pointer;
   border-radius: 5px;
 }
@@ -113,15 +113,24 @@ input {
   border-radius: 15px;
 }
 
+.product-card .image {
+  display: block;
+}
+
+.product-card .product-summary {
+  margin-block: 1.2em;
+}
+
 .product-card .product-price {
   font-size: 1.2em;
   font-weight: bold;
   padding: 0.3em;
-  border-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
   background-color: rgb(89, 0, 255);
   color: #fff;
   width: fit-content;
-  margin-block: 0.5em 1em;
+  margin: 0 0 0.4em auto;
 }
 
 .button.product-card-button {
