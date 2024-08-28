@@ -5,19 +5,19 @@ import laptop from "./assets/images/laptop.jpg";
 import "./app.css";
 
 // ProductCard
-const ProductCard = (
+const ProductCard = ({
   src,
   alt,
-  width = "250",
+  width = 250,
   productName,
   productSummary,
   productPrice,
   category,
-  id
-) => {
+  id,
+}) => {
   return (
     <article className="product-card">
-      <Image src={src} alt={alt} width="250" height={width * 0.8} />
+      <Image src={src} alt={alt} width={width} height={width * 0.8} />
       <h3>{productName}</h3>
       <p>{productSummary}</p>
       <p>{`£${productPrice}`}</p>
@@ -36,7 +36,9 @@ const Image = ({ src, alt, width, height }) => {
 };
 
 // ProductRating
-const ProductRating = () => {};
+const ProductRating = () => {
+  return <p>XXXX (4)</p>;
+};
 
 // AddToCartButton
 const AddToCartButton = () => {
@@ -65,4 +67,13 @@ const BuyNowButton = ({ category, id, productName }) => {
 
 // Render app
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<ProductCard src={laptop} />);
+root.render(
+  // <Image src={laptop} alt="is cool" width={200} height={200} />
+  <ProductCard
+    src={laptop}
+    alt="Laptop"
+    productName="Laptop"
+    productSummary="Very nice laptop."
+    productPrice={249.99}
+  />
+);
