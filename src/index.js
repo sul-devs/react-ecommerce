@@ -20,7 +20,7 @@ const ProductCard = ({
       <Image src={src} alt={alt} width={width} height={width * 0.8} />
       <h3>{productName}</h3>
       <p>{productSummary}</p>
-      <p>{`£${productPrice}`}</p>
+      <p className="product-price">{`£${productPrice}`}</p>
       <BuyNowButton category={category} id={id} />
       <AddToCartButton />
       <AddToWishListButton />
@@ -42,13 +42,19 @@ const ProductRating = () => {
 
 // AddToCartButton
 const AddToCartButton = () => {
-  return <button className="button product-card-button">Add To Cart 🛒</button>;
+  return (
+    <button className="button secondary-button product-card-button">
+      Add To Cart 🛒
+    </button>
+  );
 };
 
 // AddToWishListButton
 const AddToWishListButton = () => {
   return (
-    <button className="button product-card-button">Add To WishList 🎁</button>
+    <button className="button secondary-button product-card-button">
+      Add To WishList 🎁
+    </button>
   );
 };
 
@@ -56,7 +62,7 @@ const AddToWishListButton = () => {
 const BuyNowButton = ({ category, id, productName }) => {
   return (
     <a
-      className="button product-card-button"
+      className="button primary-button product-card-button"
       href={`${category}/${id}`}
       title={`Go to ${productName} page.`}
     >
