@@ -18,8 +18,8 @@ const ProductCard = ({
   return (
     <article className="product-card">
       <Image src={src} alt={alt} width={width} height={width * 0.8} />
-      <h3>{productName}</h3>
-      <p>{productSummary}</p>
+      <h3 className="product-name">{productName}</h3>
+      <p className="product-summary">{productSummary}</p>
       <p className="product-price">{`£${productPrice}`}</p>
       <BuyNowButton category={category} id={id} />
       <AddToCartButton />
@@ -74,12 +74,11 @@ const BuyNowButton = ({ category, id, productName }) => {
 // Render app
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  // <Image src={laptop} alt="is cool" width={200} height={200} />
   <ProductCard
     src={laptop}
     alt="Laptop"
     productName="Laptop"
-    productSummary="Very nice laptop."
+    productSummary="Very nice laptop, with apple."
     productPrice={249.99}
   />
 );
