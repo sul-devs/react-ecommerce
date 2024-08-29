@@ -4,6 +4,55 @@ import ReactDOM from "react-dom/client";
 import laptop from "./assets/images/laptop.jpg";
 import "./app.css";
 
+// ProductList
+const ProductList = () => {
+  return (
+    <section>
+      <div className="container">
+        <h2>Shop Laptops</h2>
+        <ul className="product-list featured-list laptops-list">
+          <ProductCard
+            src={laptop}
+            alt="Laptop"
+            productName="Maqbook Pro Laptop"
+            productSummary="Very nice laptop, with apple."
+            productPrice={249.99}
+            category="Devices"
+            id={1}
+          />
+          <ProductCard
+            src={laptop}
+            alt="Laptop"
+            productName="Maqbook Pro Laptop"
+            productSummary="Very nice laptop, with apple."
+            productPrice={249.99}
+            category="Devices"
+            id={1}
+          />
+          <ProductCard
+            src={laptop}
+            alt="Laptop"
+            productName="Maqbook Pro Laptop"
+            productSummary="Very nice laptop, with apple."
+            productPrice={249.99}
+            category="Devices"
+            id={1}
+          />
+          <ProductCard
+            src={laptop}
+            alt="Laptop"
+            productName="Maqbook Pro Laptop"
+            productSummary="Very nice laptop, with apple."
+            productPrice={249.99}
+            category="Devices"
+            id={1}
+          />
+        </ul>
+      </div>
+    </section>
+  );
+};
+
 // ProductCard
 const ProductCard = ({
   src,
@@ -16,23 +65,25 @@ const ProductCard = ({
   id,
 }) => {
   return (
-    <article className="product-card">
-      <ImageLink
-        src={src}
-        alt={alt}
-        width={width}
-        height={width * 0.8}
-        category={category}
-        id={id}
-        productName={productName}
-      />
-      <p className="product-price">{`£${productPrice}`}</p>
-      <h3 className="product-name">{productName}</h3>
-      <p className="product-summary">{productSummary}</p>
-      <BuyNowButton category={category} id={id} productName={productName} />
-      <AddToCartButton productName={productName} />
-      <AddToWishListButton productName={productName} />
-    </article>
+    <li>
+      <article className="product-card">
+        <ImageLink
+          src={src}
+          alt={alt}
+          width={width}
+          height={width * 0.8}
+          category={category}
+          id={id}
+          productName={productName}
+        />
+        <p className="product-price">{`£${productPrice}`}</p>
+        <h3 className="product-name">{productName}</h3>
+        <p className="product-summary">{productSummary}</p>
+        <BuyNowButton category={category} id={id} productName={productName} />
+        <AddToCartButton productName={productName} />
+        <AddToWishListButton productName={productName} />
+      </article>
+    </li>
   );
 };
 
@@ -102,14 +153,4 @@ const ProductRating = () => {
 
 // Render app
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <ProductCard
-    src={laptop}
-    alt="Laptop"
-    productName="Maqbook Pro Laptop"
-    productSummary="Very nice laptop, with apple."
-    productPrice={249.99}
-    category="Devices"
-    id={1}
-  />
-);
+root.render(<ProductList />);

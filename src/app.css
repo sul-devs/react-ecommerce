@@ -38,6 +38,18 @@ a {
   text-decoration: none;
 }
 
+ul {
+  list-style: none;
+}
+
+.link {
+  text-decoration: underline;
+}
+
+.list-items {
+  list-style: circle;
+}
+
 /* Typography */
 h1,
 h2,
@@ -47,13 +59,14 @@ h4 {
 }
 
 h1 {
-  font-size: 2em;
+  font-size: 3em;
   line-height: 2.8;
 }
 
 h2 {
-  font-size: 1.7em;
+  font-size: 2.5em;
   line-height: 2.5;
+  margin-bottom: 1em;
 }
 
 h3 {
@@ -78,6 +91,13 @@ a,
 button,
 input {
   font-family: inherit;
+}
+
+/* Utilities */
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin-inline: auto;
 }
 
 /* Button */
@@ -138,4 +158,11 @@ input {
   margin-block: 1em;
   min-width: 100%;
   text-align: left;
+}
+
+/* Product List */
+.product-list {
+  display: flex;
+  gap: 5em;
+  overflow-x: scroll;
 }
