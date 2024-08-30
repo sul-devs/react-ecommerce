@@ -2,20 +2,25 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./app.css";
+import laptop from "./assets/images/laptop.jpg";
+import airpods from "./assets/images/airpods.jpg";
+import camera from "./assets/images/camera.jpg";
+import drone from "./assets/images/drone.jpg";
+import phone from "./assets/images/phone.jpg";
 
 // Product objects (data)
 const productOne = {
-  src: "./assets/images/laptop.jpg",
+  src: laptop,
   alt: "Laptop",
   productName: "Maqbook Pro Laptop",
-  productSummary: "Very nice laptop, with apple.",
+  productSummary: "Quick, efficient laptop for the workplace.",
   productPrice: 249.99,
   category: "Devices",
   id: 1,
 };
 
 const productTwo = {
-  src: "./assets/images/airpods.jpg",
+  src: airpods,
   alt: "Airpoods Pro",
   productName: "Airpoods Pro",
   productSummary: "Comfy earphones, with great sound quality.",
@@ -25,7 +30,7 @@ const productTwo = {
 };
 
 const productThree = {
-  src: "./assets/images/camera.jpg",
+  src: camera,
   alt: "Camera",
   productName: "Camera NMPO21",
   productSummary: "High quality, antique camera.",
@@ -35,7 +40,7 @@ const productThree = {
 };
 
 const productFour = {
-  src: "./assets/images/drone.jpg",
+  src: drone,
   alt: "Drone",
   productName: "Drone MQ893",
   productSummary: "Drone with HD camera.",
@@ -45,7 +50,7 @@ const productFour = {
 };
 
 const productFive = {
-  src: "./assets/images/phone.jpg",
+  src: phone,
   alt: "Lphone 12 Max",
   productName: "Lphone 12 Pro Max",
   productSummary: "Durable, lightweight smart phone.",
@@ -62,40 +67,49 @@ const ProductList = (props) => {
         <h2>{props.sectionHeading}</h2>
         <ul className="product-list featured-list laptops-list">
           <ProductCard
-            src={laptop}
-            alt="Laptop"
-            productName="Maqbook Pro Laptop"
-            productSummary="Very nice laptop, with apple."
-            productPrice={249.99}
-            category="Devices"
-            id={1}
+            src={productOne.src}
+            alt={productOne.alt}
+            productName={productOne.productName}
+            productSummary={productOne.productSummary}
+            productPrice={productOne.productPrice}
+            category={productOne.category}
+            id={productOne.id}
           />
           <ProductCard
-            src={laptop}
-            alt="Laptop"
-            productName="Maqbook Pro Laptop"
-            productSummary="Very nice laptop, with apple."
-            productPrice={249.99}
-            category="Devices"
-            id={1}
+            src={productTwo.src}
+            alt={productTwo.alt}
+            productName={productTwo.productName}
+            productSummary={productTwo.productSummary}
+            productPrice={productTwo.productPrice}
+            category={productTwo.category}
+            id={productTwo.id}
           />
           <ProductCard
-            src={laptop}
-            alt="Laptop"
-            productName="Maqbook Pro Laptop"
-            productSummary="Very nice laptop, with apple."
-            productPrice={249.99}
-            category="Devices"
-            id={1}
+            src={productThree.src}
+            alt={productThree.alt}
+            productName={productThree.productName}
+            productSummary={productThree.productSummary}
+            productPrice={productThree.productPrice}
+            category={productThree.category}
+            id={productThree.id}
           />
           <ProductCard
-            src={laptop}
-            alt="Laptop"
-            productName="Maqbook Pro Laptop"
-            productSummary="Very nice laptop, with apple."
-            productPrice={249.99}
-            category="Devices"
-            id={1}
+            src={productFour.src}
+            alt={productFour.alt}
+            productName={productFour.productName}
+            productSummary={productFour.productSummary}
+            productPrice={productFour.productPrice}
+            category={productFour.category}
+            id={productFour.id}
+          />
+          <ProductCard
+            src={productFive.src}
+            alt={productFive.alt}
+            productName={productFive.productName}
+            productSummary={productFive.productSummary}
+            productPrice={productFive.productPrice}
+            category={productFive.category}
+            id={productFive.id}
           />
         </ul>
       </div>
