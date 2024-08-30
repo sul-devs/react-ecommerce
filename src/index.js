@@ -1,8 +1,58 @@
 // Imports
 import React from "react";
 import ReactDOM from "react-dom/client";
-import laptop from "./assets/images/laptop.jpg";
 import "./app.css";
+
+// Product objects (data)
+const productOne = {
+  src: "./assets/images/laptop.jpg",
+  alt: "Laptop",
+  productName: "Maqbook Pro Laptop",
+  productSummary: "Very nice laptop, with apple.",
+  productPrice: 249.99,
+  category: "Devices",
+  id: 1,
+};
+
+const productTwo = {
+  src: "./assets/images/airpods.jpg",
+  alt: "Airpoods Pro",
+  productName: "Airpoods Pro",
+  productSummary: "Comfy earphones, with great sound quality.",
+  productPrice: 249.99,
+  category: "Devices",
+  id: 2,
+};
+
+const productThree = {
+  src: "./assets/images/camera.jpg",
+  alt: "Camera",
+  productName: "Camera NMPO21",
+  productSummary: "High quality, antique camera.",
+  productPrice: 1199.99,
+  category: "Devices",
+  id: 3,
+};
+
+const productFour = {
+  src: "./assets/images/drone.jpg",
+  alt: "Drone",
+  productName: "Drone MQ893",
+  productSummary: "Drone with HD camera.",
+  productPrice: 2499.99,
+  category: "Devices",
+  id: 4,
+};
+
+const productFive = {
+  src: "./assets/images/phone.jpg",
+  alt: "Lphone 12 Max",
+  productName: "Lphone 12 Pro Max",
+  productSummary: "Durable, lightweight smart phone.",
+  productPrice: 899.99,
+  category: "Devices",
+  id: 5,
+};
 
 // ProductList
 const ProductList = (props) => {
@@ -160,14 +210,4 @@ const ProductRating = () => {
 
 // Render app
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <ProductCard
-    src={laptop}
-    alt="Laptop"
-    productName="Maqbook Pro Laptop"
-    productSummary="Very nice laptop, with apple."
-    productPrice={249.99}
-    category="Devices"
-    id={1}
-  />
-);
+root.render(<ProductList listName="featured" sectionHeading="Featured" />);
