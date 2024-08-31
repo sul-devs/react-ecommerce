@@ -12,7 +12,7 @@ import phone from "./assets/images/phone.jpg";
 const productOne = {
   src: laptop,
   alt: "Laptop",
-  productName: "Maqbook Pro Laptop",
+  productName: "Maqbook Pro",
   productSummary: "Quick, efficient laptop for the workplace.",
   productPrice: 249.99,
   category: "Devices",
@@ -22,9 +22,9 @@ const productOne = {
 const productTwo = {
   src: airpods,
   alt: "Airpoods Pro",
-  productName: "Airpoods Pro",
+  productName: "Earpods Pro",
   productSummary: "Comfy earphones, with great sound quality.",
-  productPrice: 249.99,
+  productPrice: 99.99,
   category: "Devices",
   id: 2,
 };
@@ -43,7 +43,7 @@ const productFour = {
   src: drone,
   alt: "Drone",
   productName: "Drone MQ893",
-  productSummary: "Drone with HD camera.",
+  productSummary: "Drone with 4K HD camera built-in.",
   productPrice: 2499.99,
   category: "Devices",
   id: 4,
@@ -52,7 +52,7 @@ const productFour = {
 const productFive = {
   src: phone,
   alt: "Lphone 12 Max",
-  productName: "Lphone 12 Pro Max",
+  productName: "Lphone 12 Pro",
   productSummary: "Durable, lightweight smart phone.",
   productPrice: 899.99,
   category: "Devices",
@@ -61,10 +61,11 @@ const productFive = {
 
 // ProductList
 const ProductList = (props) => {
+  const { listName, sectionHeading } = props;
   return (
-    <section id={props.listName}>
+    <section id={listName}>
       <div className="container">
-        <h2>{props.sectionHeading}</h2>
+        <h2>{sectionHeading}</h2>
         <ul className="product-list featured-list laptops-list">
           <ProductCard
             src={productOne.src}
@@ -119,28 +120,34 @@ const ProductList = (props) => {
 
 // ProductCard
 const ProductCard = (props) => {
+  const {
+    src,
+    alt,
+    width,
+    productName,
+    productSummary,
+    productPrice,
+    category,
+    id,
+  } = props;
   return (
     <li>
       <article className="product-card">
         <ImageLink
-          src={props.src}
-          alt={props.alt}
-          width={props.width}
-          height={props.width * 0.8}
-          category={props.category}
-          id={props.id}
-          productName={props.productName}
+          src={src}
+          alt={alt}
+          width={width}
+          height={width * 0.8}
+          category={category}
+          id={id}
+          productName={productName}
         />
-        <p className="product-price">{`£${props.productPrice}`}</p>
-        <h3 className="product-name">{props.productName}</h3>
-        <p className="product-summary">{props.productSummary}</p>
-        <BuyNowButton
-          category={props.category}
-          id={props.id}
-          productName={props.productName}
-        />
-        <AddToCartButton productName={props.productName} />
-        <AddToWishListButton productName={props.productName} />
+        <p className="product-price">{`£${productPrice}`}</p>
+        <h3 className="product-name">{productName}</h3>
+        <p className="product-summary">{productSummary}</p>
+        <BuyNowButton category={category} id={id} productName={productName} />
+        <AddToCartButton productName={productName} />
+        <AddToWishListButton productName={productName} />
       </article>
     </li>
   );
@@ -152,17 +159,15 @@ ProductCard.defaultProps = {
 
 // ImageLink
 const ImageLink = (props) => {
+  const { src, alt, width, height, productName, category, id } = props;
   return (
-    <a
-      href={`${props.category}/${props.id}`}
-      title={`Go to ${props.productName} page.`}
-    >
+    <a href={`${category}/${id}`} title={`Go to ${productName} page.`}>
       <Image
         className="image"
-        src={props.src}
-        alt={props.alt}
-        width={props.width}
-        height={props.height}
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
       />
     </a>
   );
@@ -170,10 +175,11 @@ const ImageLink = (props) => {
 
 // AddToCartButton
 const AddToCartButton = (props) => {
+  const { productName } = props;
   return (
     <button
       className="button secondary-button product-card-button"
-      title={`Add ${props.productName} to your cart.`}
+      title={`Add ${productName} to your cart.`}
     >
       Add To Cart 🛒
     </button>
@@ -182,10 +188,11 @@ const AddToCartButton = (props) => {
 
 // AddToWishListButton
 const AddToWishListButton = (props) => {
+  const { productName } = props;
   return (
     <button
       className="button secondary-button product-card-button"
-      title={`Add ${props.productName} to your wish list.`}
+      title={`Add ${productName} to your wish list.`}
     >
       Add To WishList 🎁
     </button>
@@ -194,11 +201,12 @@ const AddToWishListButton = (props) => {
 
 // BuyNowButton
 const BuyNowButton = (props) => {
+  const { productName, category, id } = props;
   return (
     <a
       className="button primary-button product-card-button"
-      href={`${props.category}/${props.id}`}
-      title={`Go to ${props.productName} page.`}
+      href={`${category}/${id}`}
+      title={`Go to ${productName} page.`}
     >
       Buy Now ➡
     </a>
@@ -207,14 +215,8 @@ const BuyNowButton = (props) => {
 
 // Image
 const Image = (props) => {
-  return (
-    <img
-      className="image"
-      src={props.src}
-      alt={props.alt}
-      width={props.width}
-    />
-  );
+  const { src, alt, width } = props;
+  return <img className="image" src={src} alt={alt} width={width} />;
 };
 
 // ProductRating
