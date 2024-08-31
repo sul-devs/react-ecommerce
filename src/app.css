@@ -131,11 +131,15 @@ input {
   padding: 25px;
   background-color: rgb(0, 29, 71, 0.2);
   border-radius: 15px;
+  box-shadow: 12px 30px 15px rgba(63, 60, 88, 0.4);
 }
 
 .product-card .image {
   display: block;
   border: 3px solid rgb(89, 0, 255);
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
 }
 
 .product-card .product-summary {
@@ -143,15 +147,16 @@ input {
 }
 
 .product-card .product-price {
-  font-size: 1.2em;
+  font-size: 1em;
   font-weight: bold;
-  padding: 0.3em;
+  letter-spacing: 2px;
+  padding: 0.5em;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
   background-color: rgb(89, 0, 255);
   color: #fff;
   width: fit-content;
-  margin: 0 0 0.4em auto;
+  margin: 0 0 1.5em auto;
 }
 
 .button.product-card-button {
@@ -164,6 +169,6 @@ input {
 /* Product List */
 .product-list {
   display: flex;
-  gap: 1em;
+  gap: 4em;
   overflow-x: scroll;
 }
