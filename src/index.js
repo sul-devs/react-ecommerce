@@ -66,16 +66,26 @@ const ProductList = (props) => {
         <h2>{sectionHeading}</h2>
         <ul className="product-list featured-list laptops-list">
           {products.map((product) => {
+            const {
+              src,
+              alt,
+              width,
+              productName,
+              productSummary,
+              productPrice,
+              category,
+              id,
+            } = product
             return (
               <ProductCard
-                src={product.src}
-                alt={product.alt}
-                width={product.width}
-                productName={product.productName}
-                productSummary={product.productSummary}
-                productPrice={product.productPrice}
-                category={product.category}
-                id={product.id}
+                src={src}
+                alt={alt}
+                width={width}
+                productName={productName}
+                productSummary={productSummary}
+                productPrice={productPrice}
+                category={category}
+                id={id}
               />
             )
           })}
