@@ -9,6 +9,8 @@ import drone from "./assets/images/drone.jpg";
 import phone from "./assets/images/phone.jpg";
 
 // Product objects (data)
+
+// Product 1 Data
 const productOne = {
   src: laptop,
   alt: "Laptop",
@@ -18,7 +20,17 @@ const productOne = {
   category: "Devices",
   id: 1,
 };
+const {
+  src: srcOne,
+  alt: altOne,
+  productName: productNameOne,
+  productSummary: productSummaryOne,
+  productPrice: productPriceOne,
+  category: categoryOne,
+  id: idOne,
+} = productOne;
 
+// Product 2 Data
 const productTwo = {
   src: airpods,
   alt: "Airpoods Pro",
@@ -28,7 +40,17 @@ const productTwo = {
   category: "Devices",
   id: 2,
 };
+const {
+  src: srcTwo,
+  alt: altTwo,
+  productName: productNameTwo,
+  productSummary: productSummaryTwo,
+  productPrice: productPriceTwo,
+  category: categoryTwo,
+  id: idTwo,
+} = productTwo;
 
+// Product 3 Data
 const productThree = {
   src: camera,
   alt: "Camera",
@@ -38,7 +60,17 @@ const productThree = {
   category: "Devices",
   id: 3,
 };
+const {
+  src: srcThree,
+  alt: altThree,
+  productName: productNameThree,
+  productSummary: productSummaryThree,
+  productPrice: productPriceThree,
+  category: categoryThree,
+  id: idThree,
+} = productThree;
 
+// Product 4 Data
 const productFour = {
   src: drone,
   alt: "Drone",
@@ -48,7 +80,17 @@ const productFour = {
   category: "Devices",
   id: 4,
 };
+const {
+  src: srcFour,
+  alt: altFour,
+  productName: productNameFour,
+  productSummary: productSummaryFour,
+  productPrice: productPriceFour,
+  category: categoryFour,
+  id: idFour,
+} = productFour;
 
+// Product 5 Data
 const productFive = {
   src: phone,
   alt: "Lphone 12 Max",
@@ -58,6 +100,15 @@ const productFive = {
   category: "Devices",
   id: 5,
 };
+const {
+  src: srcFive,
+  alt: altFive,
+  productName: productNameFive,
+  productSummary: productSummaryFive,
+  productPrice: productPriceFive,
+  category: categoryFive,
+  id: idFive,
+} = productFive;
 
 // ProductList
 const ProductList = (props) => {
@@ -68,49 +119,49 @@ const ProductList = (props) => {
         <h2>{sectionHeading}</h2>
         <ul className="product-list featured-list laptops-list">
           <ProductCard
-            src={productOne.src}
-            alt={productOne.alt}
-            productName={productOne.productName}
-            productSummary={productOne.productSummary}
-            productPrice={productOne.productPrice}
-            category={productOne.category}
-            id={productOne.id}
+            src={srcOne}
+            alt={altOne}
+            productName={productNameOne}
+            productSummary={productSummaryOne}
+            productPrice={productPriceOne}
+            category={categoryOne}
+            id={idOne}
           />
           <ProductCard
-            src={productTwo.src}
-            alt={productTwo.alt}
-            productName={productTwo.productName}
-            productSummary={productTwo.productSummary}
-            productPrice={productTwo.productPrice}
-            category={productTwo.category}
-            id={productTwo.id}
+            src={srcTwo}
+            alt={altTwo}
+            productName={productNameTwo}
+            productSummary={productSummaryTwo}
+            productPrice={productPriceTwo}
+            category={categoryTwo}
+            id={idTwo}
           />
           <ProductCard
-            src={productThree.src}
-            alt={productThree.alt}
-            productName={productThree.productName}
-            productSummary={productThree.productSummary}
-            productPrice={productThree.productPrice}
-            category={productThree.category}
-            id={productThree.id}
+            src={srcThree}
+            alt={altThree}
+            productName={productNameThree}
+            productSummary={productSummaryThree}
+            productPrice={productPriceThree}
+            category={categoryThree}
+            id={idThree}
           />
           <ProductCard
-            src={productFour.src}
-            alt={productFour.alt}
-            productName={productFour.productName}
-            productSummary={productFour.productSummary}
-            productPrice={productFour.productPrice}
-            category={productFour.category}
-            id={productFour.id}
+            src={srcFour}
+            alt={altFour}
+            productName={productNameFour}
+            productSummary={productSummaryFour}
+            productPrice={productPriceFour}
+            category={categoryFour}
+            id={idFour}
           />
           <ProductCard
-            src={productFive.src}
-            alt={productFive.alt}
-            productName={productFive.productName}
-            productSummary={productFive.productSummary}
-            productPrice={productFive.productPrice}
-            category={productFive.category}
-            id={productFive.id}
+            src={srcFive}
+            alt={altFive}
+            productName={productNameFive}
+            productSummary={productSummaryFive}
+            productPrice={productPriceFive}
+            category={categoryFive}
+            id={idFive}
           />
         </ul>
       </div>
@@ -160,6 +211,7 @@ ProductCard.defaultProps = {
 // ImageLink
 const ImageLink = (props) => {
   const { src, alt, width, height, productName, category, id } = props;
+
   return (
     <a href={`${category}/${id}`} title={`Go to ${productName} page.`}>
       <Image
@@ -176,6 +228,7 @@ const ImageLink = (props) => {
 // AddToCartButton
 const AddToCartButton = (props) => {
   const { productName } = props;
+
   return (
     <button
       className="button secondary-button product-card-button"
@@ -189,6 +242,7 @@ const AddToCartButton = (props) => {
 // AddToWishListButton
 const AddToWishListButton = (props) => {
   const { productName } = props;
+
   return (
     <button
       className="button secondary-button product-card-button"
