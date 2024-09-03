@@ -1,12 +1,12 @@
 // Imports
-import React from "react"
-import ReactDOM from "react-dom/client"
-import "./app.css"
-import laptop from "./assets/images/laptop.jpg"
-import airpods from "./assets/images/airpods.jpg"
-import camera from "./assets/images/camera.jpg"
-import drone from "./assets/images/drone.jpg"
-import phone from "./assets/images/phone.jpg"
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./app.css";
+import laptop from "./assets/images/laptop.jpg";
+import airpods from "./assets/images/airpods.jpg";
+import camera from "./assets/images/camera.jpg";
+import drone from "./assets/images/drone.jpg";
+import phone from "./assets/images/phone.jpg";
 
 // Products data
 const products = [
@@ -59,7 +59,7 @@ const products = [
 
 // ProductList
 const ProductList = (props) => {
-  const { listName, sectionHeading } = props
+  const { listName, sectionHeading } = props;
   return (
     <section id={listName}>
       <div className="container">
@@ -75,7 +75,7 @@ const ProductList = (props) => {
               productPrice,
               category,
               id,
-            } = product
+            } = product;
             return (
               <ProductCard
                 src={src}
@@ -85,7 +85,7 @@ const ProductList = (props) => {
                 productSummary={productSummary}
                 productPrice={productPrice}
                 category={category}
-                id={id}
+                key={id}
               />
             )
           })}
@@ -106,7 +106,7 @@ const ProductCard = (props) => {
     productPrice,
     category,
     id,
-  } = props
+  } = props;
   return (
     <li>
       <article className="product-card">
@@ -136,7 +136,7 @@ ProductCard.defaultProps = {
 
 // ImageLink
 const ImageLink = (props) => {
-  const { src, alt, width, height, productName, category, id } = props
+  const { src, alt, width, height, productName, category, id } = props;
   return (
     <a href={`${category}/${id}`} title={`Go to ${productName} page.`}>
       <Image
@@ -152,7 +152,7 @@ const ImageLink = (props) => {
 
 // AddToCartButton
 const AddToCartButton = (props) => {
-  const { productName } = props
+  const { productName } = props;
   return (
     <button
       className="button secondary-button product-card-button"
@@ -165,7 +165,7 @@ const AddToCartButton = (props) => {
 
 // AddToWishListButton
 const AddToWishListButton = (props) => {
-  const { productName } = props
+  const { productName } = props;
   return (
     <button
       className="button secondary-button product-card-button"
@@ -178,7 +178,7 @@ const AddToWishListButton = (props) => {
 
 // BuyNowButton
 const BuyNowButton = (props) => {
-  const { productName, category, id } = props
+  const { productName, category, id } = props;
   return (
     <a
       className="button primary-button product-card-button"
@@ -192,7 +192,7 @@ const BuyNowButton = (props) => {
 
 // Image
 const Image = (props) => {
-  const { src, alt, width } = props
+  const { src, alt, width } = props;
   return <img className="image" src={src} alt={alt} width={width} />
 }
 
@@ -202,5 +202,5 @@ const ProductRating = () => {
 }
 
 // Render app
-const root = ReactDOM.createRoot(document.getElementById("root"))
-root.render(<ProductList listName="featured" sectionHeading="Featured" />)
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<ProductList listName="featured" sectionHeading="Featured" />);
